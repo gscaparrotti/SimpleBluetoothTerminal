@@ -116,7 +116,7 @@ public class DevicesFragment extends ListFragment {
             }
             if(!permissionMissing) {
                 for (BluetoothDevice device : bluetoothAdapter.getBondedDevices())
-                    if (device.getType() != BluetoothDevice.DEVICE_TYPE_LE)
+                    if (device.getType() != BluetoothDevice.DEVICE_TYPE_LE && device.getName().contains("ev3"))
                         listItems.add(device);
                 Collections.sort(listItems, BluetoothUtil::compareTo);
             }
@@ -137,7 +137,7 @@ public class DevicesFragment extends ListFragment {
         BluetoothDevice device = listItems.get(position-1);
         Bundle args = new Bundle();
         args.putString("device", device.getAddress());
-        Fragment fragment = new TerminalFragment();
+        Fragment fragment = new RemoteFragment();
         fragment.setArguments(args);
         getParentFragmentManager().beginTransaction().replace(R.id.fragment, fragment, "terminal").addToBackStack(null).commit();
     }

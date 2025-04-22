@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Simple Bluetooth Terminal</string>
+    <string name="app_name">Mindstorms ev3 Remote</string>
     <string name="devices">Bluetooth Devices</string>
 
     <string name="bluetooth_permission_title">Bluetooth permission</string>

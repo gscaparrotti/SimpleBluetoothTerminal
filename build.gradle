@@ -12,6 +12,8 @@ allprojects {
     repositories {
         google()
         mavenCentral()
+        maven { url("https://artifactory.appodeal.com:443/appodeal-public") }
+        maven { url 'https://jitpack.io' }
     }
 }
 
